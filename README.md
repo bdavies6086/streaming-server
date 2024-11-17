@@ -15,6 +15,8 @@ frontend would also get out of sync without some sort of server sent events conf
 
 A simple way to make this stateless would be to render a stream per camera, but that would cost more £££
 
+Another way to remove state could be to crop on the frontend, and stream all cameras as part of a single stream. But the thought of some horrible css hack to crop videos in the frontend made me feel nauseaous.
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies
