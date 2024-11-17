@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+</head>
+<body>
+    <script>
+
+        setTimeout(() => {
+            const splash = document.getElementById("splash")
+            splash.style.opacity = "0";
+
+            setTimeout(() => {
+                splash.remove();
+            }, 450)
+        }, 1000);
+
+        function selection(e) {
+            fetch(`change_channel?index=${e.value}`)
+        }
+    </script>
+
+    
+
+    <div id="contents">
+        <img id="vid" src="/video">
+
+        <select id="areas" onchange="selection(this)" selected="{{index}}">
+            {% for key in areas %}
+                <option value="{{loop.index - 1}}" {% if(loop.index - 1) == index %} selected {% endif %}>{{key}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div id="splash">
+        <img id="splash-icon" src="static/img/splash-icon.png"></img>
+    </div>
+
+    
+</body>
