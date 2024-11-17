@@ -8,6 +8,11 @@ Only one cell is streamed at a time to save on costs.
 
 This project also adds some opencv magic to add in people detection
 
+As you can see the in the files, the project does make quite a bit of use of shared state in the modules. Which is a big no no when a server is handling multiple tenants. In this case its for a personal project and will have 1 user interracting with it at one time, so isn't an issue.
+
+If multiple tenants were to use this server, they'd be competing for which channel to watch (the channels on the 
+frontend would also get out of sync without some sort of server sent events configured (but thats overkill for this project.))
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies
