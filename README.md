@@ -13,6 +13,8 @@ As you can see the in the files, the project does make quite a bit of use of sha
 If multiple tenants were to use this server, they'd be competing for which channel to watch (the channels on the 
 frontend would also get out of sync without some sort of server sent events configured (but thats overkill for this project.))
 
+A simple way to make this stateless would be to render a stream per camera, but that would cost more £££
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies
